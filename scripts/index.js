@@ -1,9 +1,9 @@
 window.onload = function(){
     var canvas =(document.querySelector("#canvas"))
-    var width = 900
-    var height = 580
-    canvas.setAttribute('height')
-    canvas.setAttribute('width')
+    var width = 840
+    var height = 600
+    canvas.setAttribute('height',height)
+    canvas.setAttribute('width',width)
     var game = new Game(width,height)
     game.gameStart()
 }

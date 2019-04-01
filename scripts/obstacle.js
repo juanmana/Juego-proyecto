@@ -1,12 +1,11 @@
 class Obstacle{
     constructor(game){
-        this.posX = undefined
-        this.posY = undefined
+        this.posX = 0
+        this.posY = 450
         this.witdh = undefined
         this.height = undefined
         this.img =new Image()
-        this.img.src = undefined
-        this.sX = 5
+        this.img.src = "./images/car1.png"
         this.game = game
     }
 
@@ -14,10 +13,11 @@ class Obstacle{
 
 
     drawObstacle(){
-
+     this.game.ctx.drawImage(this.img,this.posX,this.posY,94,45)
     }
 
     moveObstacle(){
-
+      if(this.posX < 900){
+     this.posX +=5}
     }
 }
