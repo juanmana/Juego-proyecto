@@ -1,0 +1,10 @@
+body{
+    background: url("./images/fondor.jpg");
+    display: flex;
+    justify-content: center;
+
+}
+canvas{
+    background: black;
+    border: 5px solid gold;
+}
