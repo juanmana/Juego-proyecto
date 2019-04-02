@@ -3,7 +3,7 @@ class Background{
     constructor(game,x,y,w,h){
         this.posX = x
         this.posY = y
-        this.witdh = w
+        this.width = w
         this.height = h
         this.game = game
     }

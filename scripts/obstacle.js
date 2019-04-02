@@ -1,27 +1,33 @@
 class Obstacle{
-    constructor(game){
-        this.posX = 0
-        this.posY = 480
-        this.witdh = undefined
-        this.height = undefined
+    constructor(game,speed,x,y,img,width,height,orientation){
+        this.posX = x
+        this.posY = y
+        this.width = width
+        this.height = height
         this.img =new Image()
-        this.img.src = "./images/car1.png"
+        this.img.src = img
         this.game = game
+        this.speed = speed
+        this.orientation = orientation
+
       
     }
-
    
 
 
     drawObstacle(){
-     this.game.ctx.drawImage(this.img,this.posX,this.posY,94,45)
+        this.game.ctx.drawImage(this.img,this.posX,this.posY,94,45)
 
     }
 
     moveObstacle(){
-      if(this.posX < 900 ){
-     this.posX +=5}
-
-    }
+        if(this.orientation == "RIGHT"){
+            this.posX+=this.speed
+        }else{
+         this.posX-=this.speed
+        }
+        this.speed+=0.05;
     
+}
+
 }
