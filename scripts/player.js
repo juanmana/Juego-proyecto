@@ -11,6 +11,7 @@ this.isDead = false
 this.game = game
 this.orientation = "UP"
 this.maxSpeed = 5
+
 }
  
 

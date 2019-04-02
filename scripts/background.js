@@ -19,7 +19,21 @@ class Background{
         this.game.ctx.moveTo(0,435);
         this.game.ctx.lineTo(840,435);
         this.game.ctx.strokeStyle = "white";
+        this.game.ctx.setLineDash([0]);
+        this.game.ctx.stroke();
+
+        this.game.ctx.beginPath();
+        this.game.ctx.moveTo(0,480);
+        this.game.ctx.lineTo(840,480);
+        this.game.ctx.strokeStyle = "white";
         this.game.ctx.setLineDash([10]);
+        this.game.ctx.stroke();
+
+        this.game.ctx.beginPath();
+        this.game.ctx.moveTo(0,530);
+        this.game.ctx.lineTo(840,530);
+        this.game.ctx.strokeStyle = "white";
+        this.game.ctx.setLineDash([0]);
         this.game.ctx.stroke();
     
     
@@ -27,7 +41,7 @@ class Background{
         this.game.ctx.moveTo(0,390);
         this.game.ctx.lineTo(840,390);
         this.game.ctx.strokeStyle = "white";
-        this.game.ctx.setLineDash([0]);
+        this.game.ctx.setLineDash([10]);
         this.game.ctx.stroke();
     
     
@@ -35,7 +49,7 @@ class Background{
         this.game.ctx.moveTo(0,345);
         this.game.ctx.lineTo(840,345);
         this.game.ctx.strokeStyle = "white";
-        this.game.ctx.setLineDash([10]);
+        this.game.ctx.setLineDash([0]);
         this.game.ctx.stroke();
     
     //agua

@@ -9,8 +9,7 @@ this.height = h
 this.player = new Player(this,360, 560)
 //this.obstacles = new Obstacles(this)
 //this.obstacles.generateObstacles()
-this.obstacle = new Obstacle(this)
-
+this.obstacle = new Obstacle(this,this.posY)
 this.background = new Background(this,0,0,w,h)
 this.intervalID;
 
@@ -102,7 +101,7 @@ keyRight(){
 keyDown(){
     this.player.img.src = "./images/down.png"
     this.player.orientation = "DOWN"
-    if(this.player.posY < 520){
+    if(this.player.posY < 560){
     this.player.sY =  this.player.maxSpeed
     this.player.posY += this.player.sY
 }}
