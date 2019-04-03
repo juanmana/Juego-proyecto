@@ -17,8 +17,9 @@ class Obstacle{
 
     drawObstacle(){
         this.game.ctx.drawImage(this.img,this.posX,this.posY,94,45)
-
+        
     }
+    
 
     moveObstacle(){
         if(this.orientation == "RIGHT"){

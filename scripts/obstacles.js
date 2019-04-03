@@ -82,13 +82,13 @@ class Obstacles{
    
                   switch(y){
                       case 0:
-                      y = 375
+                      y = 300
                       break;
                       case 1:
-                      y = 437
+                      y = 390
                       break;
                       case 2:
-                      y = 499
+                      y = 486
                       break;
                   }
    

@@ -90,7 +90,7 @@ class Game {
                 this.player.posY += this.player.sY
             }
         } else {
-            this.player2.img.src = "./images/up.png"
+            this.player2.img.src = "./images/up2.png"
             this.player2.orientation = "UP"
             if (this.player2.posY > 0) {
                 this.player2.sY = -this.player2.maxSpeed
@@ -116,7 +116,7 @@ class Game {
 
             }
         } else {
-            this.player2.img.src = "./images/left.png"
+            this.player2.img.src = "./images/left2.png"
             this.player2.orientation = "LEFT"
             if (this.player2.posX > 0) {
 
@@ -143,7 +143,7 @@ class Game {
                 this.player.posX += this.player.sX
             }
         } else {
-            this.player2.img.src = "./images/right.png"
+            this.player2.img.src = "./images/right2.png"
             this.player2.orientation = "RIGHT"
             if (this.player2.posX < 780) {
                 this.player2.sX = this.player2.maxSpeed
@@ -164,7 +164,7 @@ class Game {
                 this.player.posY += this.player.sY
             }
         } else {
-            this.player2.img.src = "./images/down.png"
+            this.player2.img.src = "./images/down2.png"
             this.player2.orientation = "DOWN"
             if (this.player2.posY < 560) {
                 this.player2.sY = this.player2.maxSpeed
@@ -177,11 +177,24 @@ class Game {
 
     isCollision(){
 
-        for(){
-            if()
+ for(var i = 0; i < this.obstacles.listObstacles.length ;i++ ){
+
+
+    if(this.obstacles.listObstacles[i].posX < this.player.posX + this.player.width &&
+       this.player.posX < this.obstacles.listObstacles[i].posX + this.obstacles.listObstacles[i].width&&
+           this.obstacles.listObstacles[i].posY < this.player.posY +  this.player.height &&  
+           this.player.posY < this.obstacles.listObstacles[i].posY +this.obstacles.listObstacles[i].height)
             {
-                console.log("sdfsdfsdf")
+                this.player=new Player(this, 360, 560)
             }
+
+    if(this.obstacles.listObstacles[i].posX < this.player2.posX + this.player2.width &&
+        this.player2.posX < this.obstacles.listObstacles[i].posX + this.obstacles.listObstacles[i].width&&
+            this.obstacles.listObstacles[i].posY < this.player2.posY +  this.player2.height &&  
+            this.player2.posY < this.obstacles.listObstacles[i].posY +this.obstacles.listObstacles[i].height)
+             {
+                 this.player2=new Player(this, 300, 560)
+             }
         }
     }
 
