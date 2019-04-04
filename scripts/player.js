@@ -13,6 +13,7 @@ this.isDead = false
 this.game = game
 this.orientation = "UP"
 this.maxSpeed = 5
+this.onTheMove = false
 
 }
  
@@ -21,11 +22,22 @@ drawPlayer(){
    
 this.game.ctx.drawImage(this.img,this.posX,this.posY,40,40)
 }
-movePlayer(){
-if(this.posX%40!=0)this.posX+=this.sX
-else this.sX = 0;
-if(this.posY%40!=0)this.posY+=this.sY
-else this.sY =0;
+movePlayer() {
+    if (this.posX % 40 != 0) {
+        this.onTheMove = true
+        this.posX += this.sX
+    } else {
+        this.onTheMove = false;
+        this.sX = 0;
+    }
+    if (this.posY % 40 != 0) {
+        this.onTheMove= true;
+        this.posY += this.sY
+    } else {
+        this.onTheMove = false;
+        this.sY = 0;
+    }
+
 }
 
 deadPlayer(){

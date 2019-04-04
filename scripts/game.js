@@ -9,6 +9,14 @@ class Game {
         this.player = new Player(this, 360, 560)
         this.player2 = new Player(this, 300, 560)
         this.obstacles = new Obstacles(this)
+        this.trunks =[]
+        this.trunks.push(new Trunks(this,320,200))
+        this.trunks.push(new Trunks(this,500,140))
+        this.trunks.push(new Trunks(this,100,140))
+
+        this.trunks.push(new Trunks(this,300,80))
+
+
         this.background = new Background(this, 0, 0, w, h)
         this.intervalID;
 
@@ -35,9 +43,12 @@ class Game {
 
 
         this.background.drawBackground()
+        this.trunks.forEach(trunk=>trunk.drawTrunks())
+
         this.player.drawPlayer()
         this.player2.drawPlayer()
         this.obstacles.drawObstacles()
+
     }
 
     gameStart() {
@@ -52,6 +63,9 @@ class Game {
             this.setListeners();
             this.drawAll();
             this.isCollision();
+            this.isTrunk()
+            this.isTrunk2()
+
 
 
 
@@ -174,6 +188,64 @@ class Game {
 
 
     }
+
+    isTrunk2() {
+        var died = true;
+        if (this.player2.posY < 240 && !this.player.onTheMove) {
+            this.trunks.forEach(trunk => {
+                if (this.player2.posX < trunk.posX + 250 &&
+                    this.player2.posX + 40 > trunk.posX &&
+                    this.player2.posY < trunk.posY + 40 &&
+                    this.player2.posY + 40> trunk.posY) {
+
+                  
+                    died = false
+
+                }
+              
+            })
+            if (died){
+                this.player2 = new Player(this, 360, 560)
+            }
+            
+        }
+    }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+    isTrunk() {
+        var died = true;
+        if (this.player.posY < 240 && !this.player.onTheMove) {
+            this.trunks.forEach(trunk => {
+                if (this.player.posX < trunk.posX + 250 &&
+                    this.player.posX + 40 > trunk.posX &&
+                    this.player.posY < trunk.posY + 40 &&
+                    this.player.posY + 40> trunk.posY) {
+
+                  
+                    died = false
+
+                }
+              
+            })
+            if (died){
+                this.player = new Player(this, 360, 560)
+            }
+            
+        }
+    }
+            
+    
 
     isCollision(){
 

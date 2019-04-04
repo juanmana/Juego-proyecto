@@ -56,8 +56,15 @@ class Background{
     
     this.game.ctx.fillStyle ="AQUAMARINE";
     this.game.ctx.fillRect(0,0,840,250)
-    }
+    
+    
+    this.game.ctx.fillStyle ="black";
 
+    this.game.ctx.font = "30px Arial";
+    this.game.ctx.fillText("Player 1",30,30)
+    this.game.ctx.fillText("Player 2",700,30)
+
+    }
 
 
 

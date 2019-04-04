@@ -27,7 +27,7 @@ class Obstacle{
         }else{
          this.posX-=this.speed
         }
-        this.speed+=0.05;
+        this.speed+=0.03;
     
 }
 

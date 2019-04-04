@@ -49,23 +49,23 @@ class Obstacles{
      }
      createObstacle2(){
         var data= this.generatePosition()
-        var obstacle = new Obstacle(this.game,6,data.x,data.y,"./images/obstacle2.png", 90,42,data.orientation)
+        var obstacle = new Obstacle(this.game,4,data.x,data.y,"./images/obstacle2.png", 90,42,data.orientation)
          return obstacle
     
     }   
     createObstacle3(){
         var data= this.generatePosition()
-        var obstacle = new Obstacle(this.game,7,data.x,data.y,"./images/obstacle3.png", 94,45,data.orientation)
+        var obstacle = new Obstacle(this.game,3,data.x,data.y,"./images/obstacle3.png", 94,45,data.orientation)
      return obstacle
     }
     createObstacle4(){
         var data= this.generatePosition()
-        var obstacle = new Obstacle(this.game,4,data.x,data.y,"./images/obstacle4.png", 208,47,data.orientation)
+        var obstacle = new Obstacle(this.game,2,data.x,data.y,"./images/obstacle4.png", 208,47,data.orientation)
     return obstacle
     }
     createObstacle5(){
         var data= this.generatePosition()
-        var obstacle = new Obstacle(this.game,3,data.x,data.y,"./images/obstacle5.png", 127,42,data.orientation)
+        var obstacle = new Obstacle(this.game,1,data.x,data.y,"./images/obstacle5.png", 127,42,data.orientation)
    return obstacle
     }
 

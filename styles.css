@@ -2,9 +2,25 @@ body{
     background: url("./images/fondor.jpg");
     display: flex;
     justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
 
 }
 canvas{
     background: black;
     border: 5px solid gold;
 }
+
+body button {
+    font-size: 20px;
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-top: 250px;
+  }
+  
