@@ -6,8 +6,8 @@ class Game {
         this.ctx = this.canvas.getContext('2d')
         this.width = w
         this.height = h
-        this.player = new Player(this, 360, 560)
-        this.player2 = new Player(this, 300, 560)
+        this.player = new Player(this, 360, 560,'./images/up.png',0)
+        this.player2 = new Player(this, 300, 560,'./images/up2.png',0)
         this.obstacles = new Obstacles(this)
         this.trunks =[]
         this.trunks.push(new Trunks(this,320,200))
@@ -15,11 +15,14 @@ class Game {
         this.trunks.push(new Trunks(this,100,140))
 
         this.trunks.push(new Trunks(this,300,80))
+        this.home =new Home(this,410,0,w,h)
 
 
         this.background = new Background(this, 0, 0, w, h)
         this.intervalID;
-
+        this.endGame=false;
+        this.winner="";
+     
     }
 
     clear() {
@@ -33,6 +36,8 @@ class Game {
     }
 
 
+  
+
     setListeners() {
         document.onkeydown = function (e) {
             this.handleKeyDown(e.keyCode)
@@ -44,20 +49,36 @@ class Game {
 
         this.background.drawBackground()
         this.trunks.forEach(trunk=>trunk.drawTrunks())
-
+        this.home.drawHome()
         this.player.drawPlayer()
         this.player2.drawPlayer()
         this.obstacles.drawObstacles()
 
+
+        this.home.drawHomePlayers();
+
     }
 
+    EndGame(){
+
+        if (this.winner=="Player 1")
+        {
+            this.ctx.fillStyle= "darkgreen" ;
+            this.ctx.fillRect(0, 560, 840, 45);
+            this.ctx.fillRect(0, 250, 840, 45);
+        }
+        else{
+
+            
+        }
+    }
     gameStart() {
 
         this.intervalID = setInterval(function () {
             this.obstacles.generateObstacles()
 
 
-
+            if (!this.endGame){
             this.clear();
             this.moveAll();
             this.setListeners();
@@ -65,6 +86,14 @@ class Game {
             this.isCollision();
             this.isTrunk()
             this.isTrunk2()
+            this.meta()
+            }
+            else{
+                this.clear();
+                
+                this.EndGame();
+            }
+
 
 
 
@@ -72,6 +101,9 @@ class Game {
 
         }.bind(this), 1000 / 60)
     }
+
+   
+
     handleKeyDown(key) {
         switch (key) {
             case 38:
@@ -205,7 +237,8 @@ class Game {
               
             })
             if (died){
-                this.player2 = new Player(this, 360, 560)
+             
+        this.player2 = new Player(this, 300, 560,'./images/up2.png',this.player2.goals)
             }
             
         }
@@ -216,6 +249,46 @@ class Game {
 
 
 
+
+
+
+
+meta(){
+
+    if (this.player.posX < this.home.posX + 70 &&
+        this.player.posX + 40 >this.home.posX &&
+        this.player.posY < this.home.posY + 70 &&
+        this.player.posY + 40> this.home.posY) {
+
+            if (this.player.posY==40&&this.player.posX<=440&&this.player.posX>=400)
+                this.player.goals++;
+                if(this.player.goals==3) 
+                {this.winner="Player 1"
+                    this.endGame=true;}
+    
+    
+
+}
+if (this.player2.posX < this.home.posX + 70 &&
+    this.player2.posX + 40 >this.home.posX &&
+    this.player2.posY < this.home.posY + 70 &&
+    this.player2.posY + 40> this.home.posY) {
+
+        if (this.player2.posY==45&&this.player2.posX<=440&&this.player2.posX>=400)
+
+        this.player2.goals++
+        if(this.player.goals==3){ 
+            this.winner="Player 2"
+            this.endGame=true;
+        
+        }
+
+      
+
+
+
+
+}}
 
 
 
@@ -239,7 +312,7 @@ class Game {
               
             })
             if (died){
-                this.player = new Player(this, 360, 560)
+                this.player = new Player(this, 360, 560,'./images/up.png',this.player.goals)
             }
             
         }
@@ -257,7 +330,7 @@ class Game {
            this.obstacles.listObstacles[i].posY < this.player.posY +  this.player.height &&  
            this.player.posY < this.obstacles.listObstacles[i].posY +this.obstacles.listObstacles[i].height)
             {
-                this.player=new Player(this, 360, 560)
+                this.player = new Player(this, 360, 560,'./images/up.png',this.player.goals)
             }
 
     if(this.obstacles.listObstacles[i].posX < this.player2.posX + this.player2.width &&
@@ -265,9 +338,11 @@ class Game {
             this.obstacles.listObstacles[i].posY < this.player2.posY +  this.player2.height &&  
             this.player2.posY < this.obstacles.listObstacles[i].posY +this.obstacles.listObstacles[i].height)
              {
-                 this.player2=new Player(this, 300, 560)
+                this.player2 = new Player(this, 300, 560,'./images/up2.png',this.player2.goals)
              }
         }
     }
+
+    
 
 }

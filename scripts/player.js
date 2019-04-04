@@ -1,20 +1,19 @@
 class Player{
-constructor(game,x,y){
+constructor(game,x,y,imag,goals){
 this.posX = x
 this.posY = y
 this.life = 3
 this.img = new Image();
-this.img.src = "./images/up.png"
+this.img.src = imag
 this.width = 40
 this.height = 40
 this.sX = 5
 this.sY = 5
-this.isDead = false
 this.game = game
 this.orientation = "UP"
 this.maxSpeed = 5
 this.onTheMove = false
-
+this.goals=goals;
 }
  
 
@@ -40,9 +39,6 @@ movePlayer() {
 
 }
 
-deadPlayer(){
-
-}
 
 
 }

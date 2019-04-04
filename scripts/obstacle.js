@@ -16,8 +16,9 @@ class Obstacle{
 
 
     drawObstacle(){
-        this.game.ctx.drawImage(this.img,this.posX,this.posY,94,45)
-        
+
+        this.game.ctx.drawImage(this.img,this.posX,this.posY,this.width,this.height)
+
     }
     
 
