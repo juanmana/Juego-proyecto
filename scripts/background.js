@@ -58,7 +58,6 @@ class Background{
     this.game.ctx.fillRect(0,0,840,250)
     
     
-    this.game.ctx.fillStyle ="black";
 
     //player1 player2
     this.game.ctx.font = "30px Arial";

@@ -63,13 +63,17 @@ class Game {
 
         if (this.winner=="Player 1")
         {
-            this.ctx.fillStyle= "darkgreen" ;
-            this.ctx.fillRect(0, 560, 840, 45);
-            this.ctx.fillRect(0, 250, 840, 45);
+            this.ctx.font = " bold 80px Arial";
+            this.ctx.fillText("PLAYER 1 WINS ",100,300)
+            this.ctx.fillStyle ="green";
+            
         }
         else{
-
             
+            this.ctx.font = " bold 80px Arial";
+            this.ctx.fillText("PLAYER 2 WINS ",100,300)
+            this.ctx.fillStyle ="red";
+
         }
     }
     gameStart() {
@@ -277,7 +281,7 @@ if (this.player2.posX < this.home.posX + 70 &&
         if (this.player2.posY==45&&this.player2.posX<=440&&this.player2.posX>=400)
 
         this.player2.goals++
-        if(this.player.goals==3){ 
+        if(this.player2.goals==3){ 
             this.winner="Player 2"
             this.endGame=true;
         
