@@ -23,7 +23,7 @@ Avanzar derecha:   d
 
 
 
-## Desarrollo:
+## Desarrollo del proyecto:
 El comienzo del planteamiento del juego ha sido complicado ya que era algo completamente nuevo para mi, pero orgulloso del juego que he creado. La parte del codigo que mas me ha costado son las colisiones con los troncos,pero estoy orgulloso de todo el codigo en general, desde pintar una linea de la carretera,pasando por el movimiento de la rana y acabando por las colisiones, ya que como he dicho anteriormente era la primera vez que me enfrentaba a este reto.
 
 
