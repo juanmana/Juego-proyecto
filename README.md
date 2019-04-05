@@ -3,7 +3,7 @@
 			
 ![frogger-site-logo-mobile](https://user-images.githubusercontent.com/46864823/55611711-9fd0b480-5786-11e9-929c-41d7df8cebe6.jpg)
 
-## Introdución:
+## Introducción:
 
 Se trata de una versión del clásico juego FROGGER,en este caso se trata de una versión para dos jugadores, que deberan competir por ver quien llega antes a la meta.El primero jugador que consiga llegar a la meta 3 veces ganará.Por el camino se encontraran con una carretera llena de coches que tendran que esquivar si no quieren ser atropelladas, si son atropelladas volveran a su posicion inicial.
 
