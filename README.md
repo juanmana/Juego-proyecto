@@ -34,5 +34,5 @@ Me hubiera gustado incluir una pantalla de inicio, mejorar el diseño de la pant
 
 
 
-https://juanmana.github.io/Juego-proyecto/
+[juega aqui](https://juanmana.github.io/Juego-proyecto/)
  
